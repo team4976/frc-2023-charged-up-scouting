@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Auto.dart' as AutoFile;
+import 'Teleop.dart' as Teleop;
 import 'Functions.dart' as Functions;
 
 void main() {
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         // Add the routes here
         '/Index': (context) => MyHomePage(title: 'Robotics Title Page'),
-        '/Auto': (context) => AutoFile.AutoPage(title: 'Autonomous Period')
+        '/Auto': (context) => AutoFile.AutoPage(title: 'Autonomous Period'),
+        '/Teleop': (context) => Teleop.teleop(title: 'Teleop')
       });
 
   }
@@ -52,15 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {Navigator.pushNamed(context, '/Auto');}, child:
+                ElevatedButton(onPressed: () {Functions.functions.GotoPage('/Auto', context);}, child:
                 Text(
                   "Start Scouting"
                 )),
-                Text(""),
-                ElevatedButton(onPressed: () {/*Navigator.pushNamed(context, '/Auto');*/}, child:
-                Text(
-                    "Convert to a qr code"
-                ))
+
               ],
             )));
 

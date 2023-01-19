@@ -27,7 +27,12 @@ class _AutoPageState extends State<AutoPage> {
                   Text(
                       "Back to Previous Page"
                   )),
-                ])
+                Text(""),
+                ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Teleop", context);}, child:
+                Text(
+                    "Next Page"
+                )),
+              ])
        ])
     );
   }
