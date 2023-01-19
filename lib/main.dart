@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'Auto.dart' as AutoFile;
 import 'Teleop.dart' as Teleop;
 import 'Functions.dart' as Functions;
-
+import 'Endgame.dart' as Endgame;
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
         // Add the routes here
         '/Index': (context) => MyHomePage(title: 'Robotics Title Page'),
         '/Auto': (context) => AutoFile.AutoPage(title: 'Autonomous Period'),
-        '/Teleop': (context) => Teleop.teleop(title: 'Teleop')
+        '/Teleop': (context) => Teleop.teleop(title: 'Teleop'),
+        '/Endgame': (context) => Endgame.endgame(title: 'Final Info')
       });
 
   }

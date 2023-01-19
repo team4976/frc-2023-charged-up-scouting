@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class endgame extends StatefulWidget {
-  const endgame({Key? key}) : super(key: key);
+  const endgame({Key? key, required this.title}) : super(key: key);
 
+  final String title;
   @override
   _endgameState createState() => _endgameState();
 }
