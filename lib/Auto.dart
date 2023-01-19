@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Functions.dart' as Functions;
 class AutoPage extends StatefulWidget {
   const AutoPage({Key? key, required this.title}) : super(key: key);
 
@@ -9,6 +9,8 @@ class AutoPage extends StatefulWidget {
 }
 
 class _AutoPageState extends State<AutoPage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +19,15 @@ class _AutoPageState extends State<AutoPage> {
       ),
       body: PageView(
         children: [
+          Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+
+                ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Index", context);}, child:
+                  Text(
+                      "Back to Previous Page"
+                  )),
+                ])
        ])
     );
   }
