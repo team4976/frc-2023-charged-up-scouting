@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Functions.dart' as Functions;
+
 class AutoPage extends StatefulWidget {
   const AutoPage({Key? key, required this.title}) : super(key: key);
 
@@ -23,7 +24,7 @@ class _AutoPageState extends State<AutoPage> {
           mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Index", context);}, child:
+                ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Pregame", context);}, child:
                   Text(
                       "Back to Previous Page"
                   )),

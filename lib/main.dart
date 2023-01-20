@@ -3,6 +3,8 @@ import 'Auto.dart' as AutoFile;
 import 'Teleop.dart' as Teleop;
 import 'Functions.dart' as Functions;
 import 'Endgame.dart' as Endgame;
+import 'Pregameinfo.dart' as Pregame;
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
         // Add the routes here
+        '/Pregame': (context) => Pregame.pregameinfo(title: 'Pregame'),
         '/Index': (context) => MyHomePage(title: 'Robotics Title Page'),
         '/Auto': (context) => AutoFile.AutoPage(title: 'Autonomous Period'),
         '/Teleop': (context) => Teleop.teleop(title: 'Teleop'),
@@ -55,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {Functions.functions.GotoPage('/Auto', context);}, child:
+                ElevatedButton(onPressed: () {Functions.functions.GotoPage('/Pregame', context);}, child:
                 Text(
                   "Start Scouting"
                 )),
