@@ -31,6 +31,7 @@ dependencies:
     sdk: flutter
   qr_flutter: ^4.0.0
   codable_forked:
+  flutter_hooks:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

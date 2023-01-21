@@ -21,12 +21,12 @@ class _teleopState extends State<teleop> {
               Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Auto", context);}, child:
+                    ElevatedButton(onPressed: (){Functions.functions.instance.GotoPage("/Auto", context);}, child:
                     Text(
                         "Back to Previous Page"
                     )),
                     Text(""),
-                    ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Teleop", context);}, child:
+                    ElevatedButton(onPressed: (){Functions.functions.instance.GotoPage("/Teleop", context);}, child:
                     Text(
                         "Next Page"
                     )),

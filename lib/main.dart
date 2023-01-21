@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {Functions.functions.GotoPage('/Pregame', context);}, child:
+                ElevatedButton(onPressed: () {Functions.functions.instance.GotoPage('/Pregame', context);}, child:
                 Text(
                   "Start Scouting"
                 )),

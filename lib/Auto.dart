@@ -24,12 +24,12 @@ class _AutoPageState extends State<AutoPage> {
           mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Pregame", context);}, child:
+                ElevatedButton(onPressed: (){Functions.functions.instance.GotoPage("/Pregame", context);}, child:
                   Text(
                       "Back to Previous Page"
                   )),
                 Text(""),
-                ElevatedButton(onPressed: (){Functions.functions.GotoPage("/Teleop", context);}, child:
+                ElevatedButton(onPressed: (){Functions.functions.instance.GotoPage("/Teleop", context);}, child:
                 Text(
                     "Next Page"
                 )),

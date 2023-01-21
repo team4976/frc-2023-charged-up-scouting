@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Functions.dart';
-import 'Data.dart' as Data;
+import 'Data.dart';
+
 
 class pregameinfo extends StatefulWidget {
   const pregameinfo({Key? key, required this.title}) : super(key: key);
@@ -13,6 +14,7 @@ class pregameinfo extends StatefulWidget {
 class _pregameinfoState extends State<pregameinfo> {
   static const String? TeamNumbers = "here";
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,44 +24,26 @@ class _pregameinfoState extends State<pregameinfo> {
         ),
         body: Center(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                functions.Textfield("TeamNumber"),
-                SizedBox( // <-- SEE HERE
-                  width: 200,
-                  child: TextField(
-                      decoration: const InputDecoration(
-                        labelText: 'Team Number',
-                        border: OutlineInputBorder(),
-                      ),
-                      onChanged: (String inputValue){
-                        Data.dataclass.TeamNumber = inputValue;
-                      }
-                  ),
-                ),
-                const Text(""),
-                SizedBox( // <-- SEE HERE
-                  width: 200,
-                  child: TextField(
-                    decoration: const InputDecoration(
-                      labelText: 'Match Number',
-                      border: OutlineInputBorder(),
-                    ),
-                    onChanged: (String inputValue){
-                      Data.dataclass.MatchNumber = inputValue;
-                    }
-                  ),
-                ),
+
+                functions.instance.Textfield("TeamNumber", true),
+                functions.instance.Textfield("TeamNumber", false),
+
+                Text(dataclass.Colour),
+                che(),
+
 
                 //Basic code for switching pages
-                ElevatedButton(onPressed: (){functions.GotoPage("/Index", context);}, child:
+                ElevatedButton(onPressed: (){functions.instance.GotoPage("/Index", context);}, child:
                 const Text(
                     "Back to Previous Page"
                 )),
 
                 const Text(""),
 
-                ElevatedButton(onPressed: (){functions.GotoPage("/Auto", context);}, child:
+                ElevatedButton(onPressed: (){functions.instance.GotoPage("/Auto", context);}, child:
                  const Text(
                     "Next Page"
                 )),
