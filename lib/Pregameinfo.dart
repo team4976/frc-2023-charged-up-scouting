@@ -11,7 +11,7 @@ class pregameinfo extends StatefulWidget {
 }
 
 class _pregameinfoState extends State<pregameinfo> {
-
+  static const String? TeamNumbers = "here";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _pregameinfoState extends State<pregameinfo> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
+                functions.Textfield("TeamNumber"),
                 SizedBox( // <-- SEE HERE
                   width: 200,
                   child: TextField(
