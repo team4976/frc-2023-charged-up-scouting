@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.lightGreen,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {

@@ -28,8 +28,8 @@ class _pregameinfoState extends State<pregameinfo> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                functions.instance.Textfield("TeamNumber", true),
-                functions.instance.Textfield("TeamNumber", false),
+                functions.instance.Textfield("Team Number", true),
+                functions.instance.Textfield("Match Number", false),
 
                 Text(dataclass.Colour),
                 che(),

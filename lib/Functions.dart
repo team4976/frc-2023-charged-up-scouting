@@ -22,7 +22,7 @@ class functions{
           ),
           onChanged: (String inputValue){
 
-              if (value == "TeamNumber") {
+              if (value == "Team Number") {
                 dataclass.TeamNumber = inputValue;
               } else if (value == "Match Number") {
                 dataclass.MatchNumber = inputValue;
@@ -73,7 +73,11 @@ class functions{
 
     ));
   }
+
+  }
+
 }
+
 class che extends StatefulWidget {
   const che({Key? key}) : super(key: key);
 
