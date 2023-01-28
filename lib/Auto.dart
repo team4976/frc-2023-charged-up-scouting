@@ -30,13 +30,13 @@ class _AutoPageState extends State<AutoPage> {
                 Row (mainAxisAlignment:MainAxisAlignment.center,
                   children: [
                     const Text("Moved? "),
-                    Checkbox(value: dataclass.moved, onChanged: (bool? value) {setState(() {dataclass.moved = dataclass.moved ? false: true;});},),
+                    Checkbox(value: (dataclass.instance.data["Moved"].toString().toLowerCase() == true), onChanged: (bool? value) {setState(() {dataclass.instance.data["Moved"] = (dataclass.instance.data["Moved"].toString().toLowerCase() == false);});},),
                     const Text("")
                   ],
                 ),
 
 
-
+                auto2(),
 
 
 
@@ -71,20 +71,16 @@ class _auto2State extends State<auto2> {
     return Container(
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text("Has the Robot Moved?: "),
-        Flexible(
-            child: FloatingActionButton(backgroundColor: Colors.green,child: const ImageIcon(AssetImage("images/minus.png"),
-              color: Colors.lightGreen,
-              size: 18,),
-                onPressed: (){setState(() {dataclass.low-=1;});})),
-        Text("           " +
-            dataclass.low.toString() +
-            "\t\t\t\t\t\t"),
-        Flexible(
 
-            child: FloatingActionButton(backgroundColor: Colors.green,child: const ImageIcon(AssetImage("imagez/plus.png"),
-              color: Colors.lightGreen,
-              size: 18, ),
-                onPressed: (){setState(() {dataclass.low+=1;});})),
+        IconButton(icon: const ImageIcon(AssetImage("images/minus.png"), size: 18),
+              iconSize: 40,
+              onPressed: (){setState(() {dataclass.instance.data["Low"]=int.parse(dataclass.instance.data["Low"].toString()) - 1;});}),
+        Text("           " +
+            dataclass.instance.data["Low"].toString() +
+            "           "),
+        IconButton(icon: const ImageIcon(AssetImage("imagez/plus.png"), size: 18),
+            iconSize: 40,
+            onPressed: (){setState(() {dataclass.instance.data["Low"]=int.parse(dataclass.instance.data["Low"].toString()) + 1;});}),
       ],),
     );
   }

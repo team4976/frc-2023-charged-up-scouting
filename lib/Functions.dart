@@ -9,6 +9,7 @@ class functions{
   static functions instance = new functions();
 
   Colors? _colour = Colors.Red;
+
   void GotoPage(String Page, BuildContext context) => Navigator.pushNamed(context, Page);
   Container Textfield(var value, bool text) {
 
@@ -17,15 +18,15 @@ class functions{
       width: 200,
       child: TextField(
           decoration: InputDecoration(
-            labelText: text ? dataclass.TeamNumbers : dataclass.MatchNumbers,
+            labelText: text ? "Team Number": "Match Number",
             border: OutlineInputBorder(),
           ),
           onChanged: (String inputValue){
 
               if (value == "Team Number") {
-                dataclass.TeamNumber = inputValue;
+                dataclass.instance.data["Team Number"] = inputValue;
               } else if (value == "Match Number") {
-                dataclass.MatchNumber = inputValue;
+                dataclass.instance.data["Match Number"] = inputValue;
               }
             }
 
@@ -72,7 +73,7 @@ class functions{
         ],
 
     ));
-  }
+
 
   }
 
@@ -103,7 +104,7 @@ class cheState extends State<che>{
                 value: Colors.Red,
                 groupValue: _colour,
                 onChanged: (Colors? value) {
-                  setState((){_colour = value;dataclass.ColorRed=true;dataclass.ColorBlue=false;});
+                  setState((){_colour = value;dataclass.instance.data["Color Red"]=true;dataclass.instance.data["Color Blue"]=false;});
                 },
               ),
             ),
@@ -115,7 +116,7 @@ class cheState extends State<che>{
                 value: Colors.Blue,
                 groupValue: _colour,
                 onChanged: (Colors? value) {
-                  setState((){_colour = value;dataclass.ColorRed=false;dataclass.ColorBlue=true;});
+                  setState((){_colour = value;dataclass.instance.data["Color Red"]=false;dataclass.instance.data["Color Blue"]=true;});
                 },
               ),
             ),

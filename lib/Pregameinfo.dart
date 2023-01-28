@@ -31,7 +31,7 @@ class _pregameinfoState extends State<pregameinfo> {
                 functions.instance.Textfield("Team Number", true),
                 functions.instance.Textfield("Match Number", false),
 
-                Text(dataclass.Colour),
+                Text(dataclass.instance.data["Colour"].toString()),
                 che(),
 
 
