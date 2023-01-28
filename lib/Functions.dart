@@ -24,9 +24,9 @@ class functions{
           onChanged: (String inputValue){
 
               if (value == "Team Number") {
-                dataclass.instance.data["Team Number"] = inputValue;
+                dataclass.instance.data[value] = inputValue;
               } else if (value == "Match Number") {
-                dataclass.instance.data["Match Number"] = inputValue;
+                dataclass.instance.data[value] = inputValue;
               }
             }
 

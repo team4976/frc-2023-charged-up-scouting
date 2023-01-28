@@ -11,6 +11,12 @@ class dataclass {
               "Colour" : "Colour",
               "Moved": false,
               "Low" : 0,
+              "Middle Cone" : 0,
+              "Middle Cube" : 0,
+              "High Cone" : 0,
+              "High Cube" : 0,
+              "Docked":false,
+              "Engaged":false,
 
   };
 
