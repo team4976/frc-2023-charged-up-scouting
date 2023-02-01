@@ -28,11 +28,15 @@ class _pregameinfoState extends State<pregameinfo> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                functions.instance.Textfield("Team Number", true),
-                functions.instance.Textfield("Match Number", false),
+                functions.instance.Textfield("Team Number"),
+                functions.instance.Textfield("Match Number"),
+                functions.instance.Textfield("Opponent 1"),
+                functions.instance.Textfield("Opponent 2"),
+                functions.instance.Textfield("Opponent 3"),
 
                 Text(dataclass.instance.data["Colour"].toString()),
-                che(),
+
+                che(), // I forgor what did function does ong
 
 
                 //Basic code for switching pages

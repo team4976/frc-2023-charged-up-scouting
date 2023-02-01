@@ -4,6 +4,7 @@ import 'Teleop.dart' as Teleop;
 import 'Functions.dart' as Functions;
 import 'Endgame.dart' as Endgame;
 import 'Pregameinfo.dart' as Pregame;
+import 'Defense.dart' as Defend;
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         '/Index': (context) => MyHomePage(title: 'Robotics Title Page'),
         '/Auto': (context) => AutoFile.AutoPage(title: 'Autonomous Period'),
         '/Teleop': (context) => Teleop.teleop(title: 'Teleop'),
-        '/Endgame': (context) => Endgame.endgame(title: 'Final Info')
+        '/Endgame': (context) => Endgame.endgame(title: 'Final Info'),
+        '/Defense': (context) => Defend.defense(title: 'Defense')
       });
 
   }
@@ -50,15 +52,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      drawer: Column(),
       appBar: AppBar(
-
+        leading:IconButton(icon:Icon(Icons.star), onPressed: (){},),
         title: Text(widget.title),
       ),
         body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {Functions.functions.instance.GotoPage('/Pregame', context);}, child:
+                ElevatedButton(onPressed: () {Functions.functions.instance.GotoPage('/Defense', context);}, child://'/Pregame', context);}, child:
                 Text(
                   "Start Scouting"
                 )),

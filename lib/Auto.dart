@@ -11,9 +11,6 @@ class AutoPage extends StatefulWidget {
 }
 
 class _AutoPageState extends State<AutoPage> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,6 +68,7 @@ class _auto2State extends State<auto2> {
     return CoolButton(widget.value, widget.description);
   }
   Container CoolButton(String Value, String description) {
+
     return Container(
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(description),

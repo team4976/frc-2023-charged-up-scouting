@@ -11,14 +11,14 @@ class functions{
   Colors? _colour = Colors.Red;
 
   void GotoPage(String Page, BuildContext context) => Navigator.pushNamed(context, Page);
-  Container Textfield(var value, bool text) {
+  Container Textfield(var value) {
 
     return Container (child: Column(children: [
       SizedBox(
       width: 200,
       child: TextField(
           decoration: InputDecoration(
-            labelText: text ? "Team Number": "Match Number",
+            labelText: dataclass.instance.data[value].toString(),
             border: OutlineInputBorder(),
           ),
           onChanged: (String inputValue){

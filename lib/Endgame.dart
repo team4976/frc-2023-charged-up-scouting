@@ -12,6 +12,15 @@ class endgame extends StatefulWidget {
 class _endgameState extends State<endgame> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+          ],
+        ),
+      ),
+    );
   }
 }
