@@ -34,43 +34,59 @@ class dataclass {
               "Opponent 1": "Opponent 1 Number",
               "Opponent 2": "Opponent 2 Number",
               "Opponent 3": "Opponent 3 Number",
+              "Charge Station": "Charging Station Number?: ",
 
 
               // Timer
-              "presses" : false,
-              "presses2" : false,
-              "presses3" : false,
-              "time1" : "Not on",
-              "time2" : "Not on",
-              "time3" : "Not on",
+              "presses1" : true,
+              "presses2" : true,
+              "presses3" : true,
+              "time1" : "Not on ",
+              "time2" : "Not on ",
+              "time3" : "Not on ",
               "TimeInfo1" : 0,
               "TimeInfo2" : 0,
               "TimeInfo3" : 0,
               "stopwatch1" : Stopwatch(),
               "stopwatch2" : Stopwatch(),
               "stopwatch3" : Stopwatch(),
+
+              // Endgame Portion
+              "presses4" : true,
+              "time4": "Not on ",
+              "TimeInfo4": 0,
+              "stopwatch4": Stopwatch(),
+              "Yellow Card": false,
+              "Red Card": false,
+              "Brokedown Card": false,
+              "Repaired Card": false,
+              "Foul Points": 0,
+              "Docked Teleop": false,
+              "Engaged Teleop" : false,
   };
 
-  TimerSetter(String presses, Object? time, String TimeInfo, Object? StopWatch) async {
+  void TimerSetter(String presses, Object? time, String TimeInfo, Object? StopWatch) async {
 
-    print(this.data[TimeInfo]);
-    if ((this.data[presses] as bool)) {
+    if ((dataclass.instance.data[presses] as bool)) {
 
-        (this.data[StopWatch] as Stopwatch).start();
-        this.data[time.toString()] = "On " + ((this.data[StopWatch] as Stopwatch).elapsedMilliseconds/1000).toString();
-        this.data[TimeInfo] = (this.data[StopWatch] as Stopwatch).elapsedMilliseconds/1000;
-        this.data[presses] = false;
+        (dataclass.instance.data[StopWatch] as Stopwatch).start();
+        dataclass.instance.data[time.toString()] = (dataclass.instance.data[time.toString()] == "On ") ? "Not on ": "On ";
+        dataclass.instance.data[TimeInfo] = (dataclass.instance.data[StopWatch] as Stopwatch).elapsedMilliseconds/1000;
+        dataclass.instance.data[presses] = false;
 
     } else {
 
-        (this.data[StopWatch] as Stopwatch).stop();
-        this.data[time.toString()] = "Not on " + ((this.data[StopWatch] as Stopwatch).elapsedMilliseconds/1000).toString();
-        this.data[TimeInfo] = (this.data[StopWatch] as Stopwatch).elapsedMilliseconds/1000;
-        this.data[presses] = true;
+        (dataclass.instance.data[StopWatch] as Stopwatch).stop();
+        dataclass.instance.data[time.toString()] = (dataclass.instance.data[time.toString()] == "Not on ") ? "On ": "Not on ";
+
+        dataclass.instance.data[TimeInfo] = (dataclass.instance.data[StopWatch] as Stopwatch).elapsedMilliseconds/1000;
+        dataclass.instance.data[presses] = true;
 
     }
 
 
   }
 
+
 }
+

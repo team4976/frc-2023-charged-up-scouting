@@ -104,10 +104,11 @@ class _checkbox2State extends State<checkbox2> {
   }
   Container CoolButton(String Value, String description) {
     return Container(
-      child: Row (mainAxisAlignment:MainAxisAlignment.center,
+      child: Row (
+        mainAxisAlignment:MainAxisAlignment.center,
         children: [
           Text(description),
-          Checkbox(value: (dataclass.instance.data[Value].toString().toLowerCase() == true), onChanged: (bool? value) {setState(() {dataclass.instance.data[Value] = (dataclass.instance.data[Value].toString().toLowerCase() == false);});},),
+          Checkbox(value: dataclass.instance.data[Value], onChanged: (bool? value) {setState(() {dataclass.instance.data[Value] = value;});},),
           const Text("")
         ],
       ),

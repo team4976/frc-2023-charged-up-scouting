@@ -35,7 +35,7 @@ class _teleopState extends State<teleop> {
                         "Back to Previous Page "
                     )),
                     const Text(""),
-                    ElevatedButton(onPressed: (){Functions.functions.instance.GotoPage("/Defense", context);}, child:
+                    ElevatedButton(onPressed: (){Functions.functions.instance.GotoPage("/Endgame", context);}, child:
                     const Text(
                         "Next Page"
                     )),
