@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Functions.dart' hide Colors;
+import 'Functions.dart' hide enum_Colors;
 import 'Data.dart';
 
 class AutoPage extends StatefulWidget {
@@ -27,7 +27,7 @@ class _AutoPageState extends State<AutoPage> {
                 checkbox2(value: "Moved", description: "Has it moved"),
 
 
-                auto2(value: "Low", description: "Low Cones:",),
+                auto2(value: "Low", description: "Low Hybrid",),
                 auto2(value: "Middle Cone", description: "Middle Cones:",),
                 auto2(value: "Middle Cube", description: "Middle Cubes:",),
                 auto2(value: "High Cube", description: "High Cubes:",),
@@ -73,15 +73,24 @@ class _auto2State extends State<auto2> {
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(description),
 
-        IconButton(icon: const ImageIcon(AssetImage("images/minus.png"), size: 18),
-              iconSize: 40,
-              onPressed: (){setState(() {dataclass.instance.data[Value]=int.parse(dataclass.instance.data[Value].toString()) - 1;});}),
-        Text("           " +
-            dataclass.instance.data[Value].toString() +
-            "           "),
-        IconButton(icon: const ImageIcon(AssetImage("imagez/plus.png"), size: 18),
+        IconButton(icon: const Icon((Icons.remove), size: 18),
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(minWidth: 20),
+              onPressed: (){setState(() {if(int.parse(functions.instance.Dataclass.data[Value].toString()) > 0) {
+                    functions.instance.Dataclass.data[Value] = int.parse(
+                            functions.instance.Dataclass.data[Value]
+                                .toString()) -1;
+                  }
+                });}),
+        Text("              " +
+            functions.instance.Dataclass.data[Value].toString() +
+            "              "),
+        IconButton(icon: const Icon((Icons.add), size: 18),
             iconSize: 40,
-            onPressed: (){setState(() {dataclass.instance.data[Value]=int.parse(dataclass.instance.data[Value].toString()) + 1;});}),
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(minWidth: 20),
+            onPressed: (){setState(() {functions.instance.Dataclass.data[Value]=int.parse(functions.instance.Dataclass.data[Value].toString()) + 1;});}),
       ],),
     );
   }
@@ -104,11 +113,12 @@ class _checkbox2State extends State<checkbox2> {
   }
   Container CoolButton(String Value, String description) {
     return Container(
+
       child: Row (
         mainAxisAlignment:MainAxisAlignment.center,
         children: [
           Text(description),
-          Checkbox(value: dataclass.instance.data[Value], onChanged: (bool? value) {setState(() {dataclass.instance.data[Value] = value;});},),
+          Checkbox(value: functions.instance.Dataclass.data[Value], onChanged: (bool? value) {setState(() {functions.instance.Dataclass.data[Value] = value;});},),
           const Text("")
         ],
       ),

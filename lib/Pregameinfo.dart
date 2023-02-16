@@ -18,6 +18,7 @@ class _pregameinfoState extends State<pregameinfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
 
           title: Text(widget.title),
@@ -34,13 +35,13 @@ class _pregameinfoState extends State<pregameinfo> {
                 functions.instance.Textfield("Opponent 2"),
                 functions.instance.Textfield("Opponent 3"),
 
-                Text(dataclass.instance.data["Colour"].toString()),
+                Text(functions.instance.Dataclass.data["Colour"].toString()),
 
                 che(), // I forgor what did function does ong
 
 
                 //Basic code for switching pages
-                ElevatedButton(onPressed: (){functions.instance.GotoPage("/Index", context);}, child:
+                ElevatedButton(onPressed: (){functions.instance.GotoPage("/Pregame", context);}, child:
                 const Text(
                     "Back to Previous Page"
                 )),
