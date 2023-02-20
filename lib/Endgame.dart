@@ -14,6 +14,8 @@ class endgame extends StatefulWidget {
 }
 
 class _endgameState extends State<endgame> {
+  var done = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +39,7 @@ class _endgameState extends State<endgame> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Charge Station: "),
+                    const Text("Charge Station: "),
                     ElevatedButton(onPressed: (){setState(() {
                       functions.instance.Dataclass.TimerSetter("presses4", "time4", "TimeInfo4", "stopwatch4");
                     });}, child: Text("${functions.instance.Dataclass.data["time4"]}: ${functions.instance.Dataclass.data["TimeInfo4"].toString()}"))
@@ -59,11 +61,16 @@ class _endgameState extends State<endgame> {
                 checkbox2(value: "Fell".toString(), description: "Did they Fall?: ".toString()),
                 ElevatedButton(
                   child: const Text("Submit"),
-                  onPressed: (){functions.instance.GotoPage("/Coder", context);},
+                  onPressed: (){functions.instance.GotoPage("/Coder", context);done=true;},
                 ),
                 ElevatedButton(
                   child: const Text("Next Match"),
-                  onPressed: (){print(functions.instance.Dataclass.data);functions.instance.Dataclass = dataclass();},
+                  onPressed: (){if(done) {
+                            print(functions.instance.Dataclass.data);
+                            functions.instance.Dataclass = dataclass();
+                            done = false;
+                          }
+                        },
                 )
               ],
             ),
