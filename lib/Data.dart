@@ -81,6 +81,7 @@ class dataclass {
               "Scanner4" : "",
               "Scanner5" : "",
               "Scanner6" : "",
+              "change222":false
   };
 
   void TimerSetter(String presses, Object? time, String TimeInfo, Object? StopWatch) async {

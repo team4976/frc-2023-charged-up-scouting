@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        // Add the routes here
         '/Pregame': (context) => const Pregame.pregameinfo(title: 'Pregame'),
         '/Index': (context) => const MyHomePage(title: 'Robotics Title Page'),
         '/Auto': (context) => const AutoFile.AutoPage(title: 'Autonomous Period'),

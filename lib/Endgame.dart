@@ -1,4 +1,3 @@
-
 import 'Functions.dart';
 import 'package:flutter/material.dart';
 import 'Data.dart';
@@ -8,9 +7,9 @@ class endgame extends StatefulWidget {
   const endgame({Key? key, required this.title}) : super(key: key);
 
   final String title;
+
   @override
   _endgameState createState() => _endgameState();
-
 }
 
 class _endgameState extends State<endgame> {
@@ -24,57 +23,95 @@ class _endgameState extends State<endgame> {
         ),
         body: Container(
             width: MediaQuery.of(context).size.width,
-        child: ListView(
-            shrinkWrap: true,
-          children: [Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: ListView(
+              shrinkWrap: true,
               children: [
-                const SizedBox(height: 15,),
-
-                const SizedBox(
-                  height: 10,
-                  width: 0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("Charge Station: "),
-                    ElevatedButton(onPressed: (){setState(() {
-                      functions.instance.Dataclass.TimerSetter("presses4", "time4", "TimeInfo4", "stopwatch4");
-                    });}, child: Text("${functions.instance.Dataclass.data["time4"]}: ${functions.instance.Dataclass.data["TimeInfo4"].toString()}"))
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                  width: 0,
-                ),
-
-                auto2(value: "Foul Points", description: "Foul Points: "),
-
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [checkbox2(value: "Docked Teleop".toString(), description: "Docked?: ".toString()),
-                checkbox2(value: "Engaged Teleop".toString(), description: "Engaged?: ".toString()),]),
-                checkbox2(value: "Yellow Card".toString(), description: "Did they get a yellow card: ".toString()),
-                checkbox2(value: "Red Card".toString(), description: "Did they get a red card: ".toString()),
-                checkbox2(value: "Brokedown Card".toString(), description: "Did they breakdown: ".toString()),
-                checkbox2(value: "Repaired Card".toString(), description: "Did they repair: ".toString()),
-                checkbox2(value: "Fell".toString(), description: "Did they Fall?: ".toString()),
-                ElevatedButton(
-                  child: const Text("Submit"),
-                  onPressed: (){functions.instance.GotoPage("/Coder", context);done=true;},
-                ),
-                ElevatedButton(
-                  child: const Text("Next Match"),
-                  onPressed: (){if(done) {
-                            print(functions.instance.Dataclass.data);
-                            functions.instance.Dataclass = dataclass();
-                            done = false;
-                          }
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                        width: 0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("Charge Station: "),
+                          ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  functions.instance.Dataclass.TimerSetter(
+                                      "presses4",
+                                      "time4",
+                                      "TimeInfo4",
+                                      "stopwatch4");
+                                });
+                              },
+                              child: Text(
+                                  "${functions.instance.Dataclass.data["time4"]}: ${functions.instance.Dataclass.data["TimeInfo4"].toString()}"))
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                        width: 0,
+                      ),
+                      auto2(value: "Foul Points", description: "Foul Points: "),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            checkbox2(
+                                value: "Docked Teleop".toString(),
+                                description: "Docked?: ".toString()),
+                            checkbox2(
+                                value: "Engaged Teleop".toString(),
+                                description: "Engaged?: ".toString()),
+                          ]),
+                      checkbox2(
+                          value: "Yellow Card".toString(),
+                          description:
+                              "Did they get a yellow card: ".toString()),
+                      checkbox2(
+                          value: "Red Card".toString(),
+                          description: "Did they get a red card: ".toString()),
+                      checkbox2(
+                          value: "Brokedown Card".toString(),
+                          description: "Did they breakdown: ".toString()),
+                      checkbox2(
+                          value: "Repaired Card".toString(),
+                          description: "Did they repair: ".toString()),
+                      checkbox2(
+                          value: "Fell".toString(),
+                          description: "Did they Fall?: ".toString()),
+                      ElevatedButton(
+                        child: const Text("Submit"),
+                        onPressed: () {
+                          setState(() {
+                            functions.instance.GotoPage("/Coder", context);
+                            functions.instance.Dataclass.data["change222"] = true;
+                            print(functions.instance.Dataclass.data["change222"]);
+                          });
                         },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Next Match"),
+                        onPressed: () {
+                          setState(() {
+                            if (functions.instance.Dataclass.data["change222"]) {
+                              functions.instance.Dataclass = dataclass();
+                              functions.instance.Dataclass.data["change222"] = false;
+                              functions.instance.GotoPage('/Index', context);
+                            }
+                          });
+                        },
+                      )
+                    ],
+                  ),
                 )
               ],
-            ),
-          )],
-        )));
+            )));
   }
 }

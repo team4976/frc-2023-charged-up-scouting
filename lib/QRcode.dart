@@ -39,7 +39,7 @@ class _qrcodeState extends State<qrcode> {
                       Visibility(
                         visible: _isVisable,
                         child: QrImage(
-                          data: (dataclass.instance.evaluvateData() + "~").toString(),
+                          data: (dataclass.instance.evaluvateData()+"~").toString(),
                           version: QrVersions.auto,
                           size: 320,
                           gapless: false,

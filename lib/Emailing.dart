@@ -25,7 +25,7 @@ class _emailingState extends State<emailing> {
                   functions.instance.Dataclass
                       .formCsv(functions.instance.Dataclass.MatchInfo());
                 },
-                child: Text("Submit")),
+                child: const Text("Submit")),
           ],
         ),
       ),
