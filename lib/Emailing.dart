@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mailer/flutter_mailer.dart';
 import 'package:frc_2023_charged_up_scouting/Functions.dart';
 
 class emailing extends StatefulWidget {

@@ -4,7 +4,7 @@ import 'dart:async';
 import 'Functions.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'dart:io';
-import 'package:flutter_mailer/flutter_mailer.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'dart:async';
 import 'package:csv/csv.dart';
 import 'package:path_provider/path_provider.dart';
@@ -178,35 +178,17 @@ class dataclass {
 
   sendEmail() async {
     String thing = (await getApplicationDocumentsDirectory()).path + "/filename.csv";
-    try {
-      MailOptions mailOptions = MailOptions(
-        body: 'Here is a CSV File:\t',
-        subject: '[URGENT] ROBOTICS [URGENT]',
-        recipients: ['1cookale@hdsb.ca'],
-        isHTML: false,
-        bccRecipients: [],
-        //['other@example.com'],
-        ccRecipients: [],
-        //['third@example.com'],
+    final Email send_email = Email(
+      body: '',
+      subject: 'Scouting Info',
+      recipients: ['4976scouting@gmail.com'],
+      cc: [],
+      bcc: [],
+      attachmentPaths: [thing],
+      isHTML: false,
+    );
 
-        attachments: [ thing,],
-      );
-
-      MailerResponse response = await FlutterMailer.send(mailOptions);
-      switch (response) {
-        case MailerResponse.sent:
-          print('Sent Message');
-          break;
-        case MailerResponse.android:
-          print("Here 3");
-          break;
-        default:
-          print('This was the default code running');
-      }
-    }
-    catch(exception){
-      print(exception);
-    }
+    await FlutterEmailSender.send(send_email);
   }
   String MatchInfo() {
     String result1 = this.data["Scanner1"];

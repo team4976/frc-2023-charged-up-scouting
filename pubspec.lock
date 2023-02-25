@@ -110,6 +110,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_email_sender:
+    dependency: "direct main"
+    description:
+      name: flutter_email_sender
+      sha256: "9e253c69617f43d4cb5de672e93a7a19c12a21fb6a75e66c6ce7626336c4c1bc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.0"
   flutter_hooks:
     dependency: "direct main"
     description:
@@ -126,14 +134,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  flutter_mailer:
-    dependency: "direct main"
-    description:
-      name: flutter_mailer
-      sha256: "5ec538be34233a62129c3aedc8cfcfaca0c4de390ca43f331f52e972d410b84d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
