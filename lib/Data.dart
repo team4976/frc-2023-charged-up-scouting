@@ -127,7 +127,7 @@ class dataclass {
   }
   String evaluvateData(){
     // Pre Match Info
-    String info = "${functions.instance.Dataclass.data["Team Number"]}, ${functions.instance.Dataclass.data["Match Number"]}, ${functions.instance.Dataclass.data["Colour"].toString()}, ";
+    String info = "${functions.instance.Dataclass.data["Team Number"]} ${functions.instance.Dataclass.data["Match Number"]} ${functions.instance.Dataclass.data["Colour"].toString()}, ";
 
     // Autonomous
     info = info + "${functions.instance.Dataclass.data["Moved"]}, ${functions.instance.Dataclass.data["Hybrid"]}, ${functions.instance.Dataclass.data["Middle Cube"]}, ${functions.instance.Dataclass.data["Middle Cone"]}, ${functions.instance.Dataclass.data["High Cube"]}, ${functions.instance.Dataclass.data["High Cone"]}, ${(true ? (functions.instance.Dataclass.data["Docked"] || functions.instance.Dataclass.data["Engaged"]): false).toString()}, ";
@@ -138,7 +138,7 @@ class dataclass {
     info = info + "${functions.instance.Dataclass.data["Middle Cube Teleop"]}, ${functions.instance.Dataclass.data["Middle Cone Teleop"]}, ${functions.instance.Dataclass.data["Middle Miss Teleop"]}, ${functions.instance.Dataclass.data["High Cube Teleop"]}, ${functions.instance.Dataclass.data["High Cone Teleop"]}, ${functions.instance.Dataclass.data["High Miss Teleop"]}, ";
 
     // Timers
-    info = info + "${functions.instance.Dataclass.data["Opponent 1"]}, ${functions.instance.Dataclass.data["Opponent 2"]}, ${functions.instance.Dataclass.data["Opponent 3"]}, ";
+    info = info + "${functions.instance.Dataclass.data["Opponent 1"]} ${functions.instance.Dataclass.data["Opponent 2"]} ${functions.instance.Dataclass.data["Opponent 3"]} ";
     info = info + "${functions.instance.Dataclass.data["TimeInfo1"].toString()}, ${functions.instance.Dataclass.data["TimeInfo2"].toString()}, ${functions.instance.Dataclass.data["TimeInfo3"].toString()}, ";
 
     // Charging Station

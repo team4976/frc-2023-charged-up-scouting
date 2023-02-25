@@ -24,7 +24,7 @@ class functions{
             border: OutlineInputBorder(),
           ),
           onChanged: (String inputValue){
-              functions.instance.Dataclass.data[value] = inputValue;
+              functions.instance.Dataclass.data[value] = inputValue + ',';
 
             }
 

@@ -33,7 +33,6 @@ dependencies:
   codable_forked:
   flutter_hooks:
   image_gallery_saver:
-  image_picker:
   permission_handler:
   qr_code_scanner:
   flutter_mailer:
