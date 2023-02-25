@@ -126,12 +126,26 @@ class dataclass {
     return true;
   }
   String evaluvateData(){
+    var moved = functions.instance.Dataclass.data["Moved"]=="TRUE" ? "1" : "0";
+    var docked = functions.instance.Dataclass.data["Docked"]=="TRUE" ? "1" : "0";
+    var engaged = functions.instance.Dataclass.data["Engaged"]=="TRUE" ? "1" : "0";
+    var thing = "0";
+    if(functions.instance.Dataclass.data["Docked"] || functions.instance.Dataclass.data["Engaged"])  {
+      thing="1";
+    }
+    var yellow = functions.instance.Dataclass.data["Yellow Card"]=="TRUE" ? "1" : "0";
+    var red = functions.instance.Dataclass.data["Red Card"]=="TRUE" ? "1" : "0";
+    var brokedown = functions.instance.Dataclass.data["Brokedown Card"]=="TRUE" ? "1" : "0";
+    var repaired = functions.instance.Dataclass.data["Repaired Card"]=="TRUE" ? "1" : "0";
+    var fell = functions.instance.Dataclass.data["Fell"]=="TRUE" ? "1" : "0";
+    var color = functions.instance.Dataclass.data["Colour"].toString()=="TRUE" ? "1" : "0";
+
     // Pre Match Info
-    String info = "${functions.instance.Dataclass.data["Team Number"]} ${functions.instance.Dataclass.data["Match Number"]} ${functions.instance.Dataclass.data["Colour"].toString()}, ";
+    String info = "${functions.instance.Dataclass.data["Team Number"]} ${functions.instance.Dataclass.data["Match Number"]} $color, ";
 
     // Autonomous
-    info = info + "${functions.instance.Dataclass.data["Moved"]}, ${functions.instance.Dataclass.data["Hybrid"]}, ${functions.instance.Dataclass.data["Middle Cube"]}, ${functions.instance.Dataclass.data["Middle Cone"]}, ${functions.instance.Dataclass.data["High Cube"]}, ${functions.instance.Dataclass.data["High Cone"]}, ${(true ? (functions.instance.Dataclass.data["Docked"] || functions.instance.Dataclass.data["Engaged"]): false).toString()}, ";
-    info = info + "${functions.instance.Dataclass.data["Docked"]}, ${functions.instance.Dataclass.data["Engaged"]}, ${functions.instance.Dataclass.data["Charge Station"]}, ";
+    info = info + "$moved, ${functions.instance.Dataclass.data["Hybrid"]}, ${functions.instance.Dataclass.data["Middle Cube"]}, ${functions.instance.Dataclass.data["Middle Cone"]}, ${functions.instance.Dataclass.data["High Cube"]}, ${functions.instance.Dataclass.data["High Cone"]}, $thing, ";
+    info = info + "$docked, $engaged, ${functions.instance.Dataclass.data["Charge Station"]}, ";
 
     // Teleop
     info = info + "${functions.instance.Dataclass.data["Hybrid Teleop"]}, ";
@@ -142,10 +156,10 @@ class dataclass {
     info = info + "${functions.instance.Dataclass.data["TimeInfo1"].toString()}, ${functions.instance.Dataclass.data["TimeInfo2"].toString()}, ${functions.instance.Dataclass.data["TimeInfo3"].toString()}, ";
 
     // Charging Station
-    info = info + "${functions.instance.Dataclass.data["Charge Station"]}, ${(true ? (functions.instance.Dataclass.data["Docked"] || functions.instance.Dataclass.data["Engaged"]): false).toString()}, ${functions.instance.Dataclass.data["Docked"]}, ${functions.instance.Dataclass.data["Engaged"]}, ${functions.instance.Dataclass.data["Fell"]}, ";
+    info = info + "${functions.instance.Dataclass.data["Charge Station"]}, $thing, $docked, $engaged, $fell, ";
 
     // Post Match Info
-    info = info + "${functions.instance.Dataclass.data["Foul Points"].toString()}, ${functions.instance.Dataclass.data["Yellow Card"]}, ${functions.instance.Dataclass.data["Red Card"]}, ${functions.instance.Dataclass.data["Brokedown Card"]}, ${functions.instance.Dataclass.data["Repaired Card"]}";
+    info = info + "${functions.instance.Dataclass.data["Foul Points"].toString()}, $yellow, $red, $brokedown, $repaired";
     return info;
   }
 
