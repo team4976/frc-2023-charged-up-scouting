@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frc_2023_charged_up_scouting/Data.dart';
+import 'package:frc_2023_charged_up_scouting/Functions.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
@@ -23,13 +24,6 @@ class _qrcodeState extends State<qrcode> {
   var mage;
   var image;
 
-  void functions() async {
-    mage = await QrPainter(
-      data: (dataclass.instance.evaluvateData() + "~").toString(),
-      version: QrVersions.auto,
-      gapless: false,
-    ).toImage(320);
-  }
 
   Future<String> imagePath() async {
     var appDocDir = (await getApplicationDocumentsDirectory()).path;
@@ -45,7 +39,7 @@ class _qrcodeState extends State<qrcode> {
     final imageDirectory = await imagePath();
 
     _screenshotController.captureFromWidget(Container(child: QrImage(
-      data: (dataclass.instance.evaluvateData() + "~").toString(),
+      data: (functions.instance.Dataclass.evaluvateData() + "~").toString(),
       version: QrVersions.auto,
       size: 320,
       gapless: false,
@@ -63,12 +57,6 @@ class _qrcodeState extends State<qrcode> {
     });
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    functions();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +81,7 @@ class _qrcodeState extends State<qrcode> {
                     child: Screenshot(
                       controller: _screenshotController,
                       child: QrImage(
-                        data: (dataclass.instance.evaluvateData() + "~")
+                        data: (functions.instance.Dataclass.evaluvateData() + "~")
                             .toString(),
                         version: QrVersions.auto,
                         size: 320,

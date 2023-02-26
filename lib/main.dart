@@ -6,7 +6,6 @@ import 'Endgame.dart' as Endgame;
 import 'Pregameinfo.dart' as Pregame;
 import 'QRcode.dart' as coder;
 import 'Emailing.dart' as emailing;
-
 import 'Scanner/scanner1.dart' as scanners1;
 import 'Scanner/scanner2.dart' as scanners2;
 import 'Scanner/scanner3.dart' as scanners3;
