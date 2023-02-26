@@ -138,10 +138,10 @@ class dataclass {
     var brokedown = functions.instance.Dataclass.data["Brokedown Card"]=="TRUE" ? "1" : "0";
     var repaired = functions.instance.Dataclass.data["Repaired Card"]=="TRUE" ? "1" : "0";
     var fell = functions.instance.Dataclass.data["Fell"]=="TRUE" ? "1" : "0";
-    var color = functions.instance.Dataclass.data["Colour"].toString()=="TRUE" ? "1" : "0";
+    var color = functions.instance.Dataclass.data["Colour"].toString()=="Colour" ? "Red" : functions.instance.Dataclass.data["Colour"].toString();
 
     // Pre Match Info
-    String info = "${functions.instance.Dataclass.data["Team Number"]} ${functions.instance.Dataclass.data["Match Number"]} $color, ";
+    String info = "${functions.instance.Dataclass.data["Team Number"]}, ${functions.instance.Dataclass.data["Match Number"]}, $color, ";
 
     // Autonomous
     info = info + "$moved, ${functions.instance.Dataclass.data["Hybrid"]}, ${functions.instance.Dataclass.data["Middle Cube"]}, ${functions.instance.Dataclass.data["Middle Cone"]}, ${functions.instance.Dataclass.data["High Cube"]}, ${functions.instance.Dataclass.data["High Cone"]}, $thing, ";
@@ -152,7 +152,7 @@ class dataclass {
     info = info + "${functions.instance.Dataclass.data["Middle Cube Teleop"]}, ${functions.instance.Dataclass.data["Middle Cone Teleop"]}, ${functions.instance.Dataclass.data["Middle Miss Teleop"]}, ${functions.instance.Dataclass.data["High Cube Teleop"]}, ${functions.instance.Dataclass.data["High Cone Teleop"]}, ${functions.instance.Dataclass.data["High Miss Teleop"]}, ";
 
     // Timers
-    info = info + "${functions.instance.Dataclass.data["Opponent 1"]} ${functions.instance.Dataclass.data["Opponent 2"]} ${functions.instance.Dataclass.data["Opponent 3"]} ";
+    info = info + "${functions.instance.Dataclass.data["Opponent 1"]}, ${functions.instance.Dataclass.data["Opponent 2"]}, ${functions.instance.Dataclass.data["Opponent 3"]}, ";
     info = info + "${functions.instance.Dataclass.data["TimeInfo1"].toString()}, ${functions.instance.Dataclass.data["TimeInfo2"].toString()}, ${functions.instance.Dataclass.data["TimeInfo3"].toString()}, ";
 
     // Charging Station
