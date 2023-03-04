@@ -126,18 +126,19 @@ class dataclass {
     return true;
   }
   String evaluvateData(){
-    var moved = functions.instance.Dataclass.data["Moved"]=="TRUE" ? "1" : "0";
-    var docked = functions.instance.Dataclass.data["Docked"]=="TRUE" ? "1" : "0";
-    var engaged = functions.instance.Dataclass.data["Engaged"]=="TRUE" ? "1" : "0";
-    var thing = "0";
+    var moved = functions.instance.Dataclass.data["Moved"]==true ? "1" : "0";
+    var docked = functions.instance.Dataclass.data["Docked"]==true ? "1" : "0";
+    var engaged = functions.instance.Dataclass.data["Engaged"]==true ? "1" : "0";
+    var thing = functions.instance.Dataclass.data["Docked"];
     if(functions.instance.Dataclass.data["Docked"] || functions.instance.Dataclass.data["Engaged"])  {
       thing="1";
     }
-    var yellow = functions.instance.Dataclass.data["Yellow Card"]=="TRUE" ? "1" : "0";
-    var red = functions.instance.Dataclass.data["Red Card"]=="TRUE" ? "1" : "0";
-    var brokedown = functions.instance.Dataclass.data["Brokedown Card"]=="TRUE" ? "1" : "0";
-    var repaired = functions.instance.Dataclass.data["Repaired Card"]=="TRUE" ? "1" : "0";
-    var fell = functions.instance.Dataclass.data["Fell"]=="TRUE" ? "1" : "0";
+    var yellow = functions.instance.Dataclass.data["Yellow Card"]==true ? "1" : "0";
+    var red = functions.instance.Dataclass.data["Red Card"]==true ? "1" : "0";
+    var brokedown = functions.instance.Dataclass.data["Brokedown Card"]==true ? "1" : "0";
+    var repaired = functions.instance.Dataclass.data["Repaired Card"]==true ? "1" : "0";
+    var fell = functions.instance.Dataclass.data["Fell"]==true? "1" : "0";
+    
     var color = functions.instance.Dataclass.data["Colour"].toString()=="Colour" ? "Red" : functions.instance.Dataclass.data["Colour"].toString();
 
     // Pre Match Info
@@ -152,11 +153,11 @@ class dataclass {
     info = info + "${functions.instance.Dataclass.data["Middle Cube Teleop"]}, ${functions.instance.Dataclass.data["Middle Cone Teleop"]}, ${functions.instance.Dataclass.data["Middle Miss Teleop"]}, ${functions.instance.Dataclass.data["High Cube Teleop"]}, ${functions.instance.Dataclass.data["High Cone Teleop"]}, ${functions.instance.Dataclass.data["High Miss Teleop"]}, ";
 
     // Timers
-    info = info + "${functions.instance.Dataclass.data["Opponent 1"]}, ${functions.instance.Dataclass.data["Opponent 2"]}, ${functions.instance.Dataclass.data["Opponent 3"]}, ";
-    info = info + "${functions.instance.Dataclass.data["TimeInfo1"].toString()}, ${functions.instance.Dataclass.data["TimeInfo2"].toString()}, ${functions.instance.Dataclass.data["TimeInfo3"].toString()}, ";
+    info = info + "${functions.instance.Dataclass.data["Opponent 1"]}, ${functions.instance.Dataclass.data["TimeInfo1"]}, ${functions.instance.Dataclass.data["Opponent 2"]}, ";
+    info = info + "${functions.instance.Dataclass.data["TimeInfo2"].toString()}, ${functions.instance.Dataclass.data["Opponent 3"].toString()}, ${functions.instance.Dataclass.data["TimeInfo3"].toString()}, ";
 
     // Charging Station
-    info = info + "${functions.instance.Dataclass.data["Charge Station"]}, $thing, $docked, $engaged, $fell, ";
+    info = info + "${functions.instance.Dataclass.data["TimeInfo4"]}, $thing, $docked, $engaged, $fell, ";
 
     // Post Match Info
     info = info + "${functions.instance.Dataclass.data["Foul Points"].toString()}, $yellow, $red, $brokedown, $repaired";

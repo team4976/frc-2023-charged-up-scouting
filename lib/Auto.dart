@@ -33,8 +33,8 @@ class _AutoPageState extends State<AutoPage> {
                 auto2(value: "High Cube", description: "High Cubes:",),
                 auto2(value: "High Cone", description: "High Cones:",),
 
-                checkbox2(value: "Moved", description: "Has it docked?:"),
-                checkbox2(value: "Moved", description: "Has it engaged?:"),
+                checkbox2(value: "Docked", description: "Has it docked?:"),
+                checkbox2(value: "Engaged", description: "Has it engaged?:"),
 
 
                 ElevatedButton(onPressed: (){functions.instance.GotoPage("/Pregame", context);}, child:
@@ -118,7 +118,9 @@ class _checkbox2State extends State<checkbox2> {
         mainAxisAlignment:MainAxisAlignment.center,
         children: [
           Text(description),
-          Checkbox(value: functions.instance.Dataclass.data[Value], onChanged: (bool? value) {setState(() {functions.instance.Dataclass.data[Value] = value;});},),
+          Checkbox(value: functions.instance.Dataclass.data[Value], onChanged: (bool? value) {setState(() {
+            functions.instance.Dataclass.data[Value] = value;
+          });},),
           const Text("")
         ],
       ),
