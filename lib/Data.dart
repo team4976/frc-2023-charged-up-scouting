@@ -158,7 +158,7 @@ class dataclass {
     info = info + "${functions.instance.Dataclass.data["TimeInfo2"].toString()}, ${functions.instance.Dataclass.data["Opponent 3"].toString()}, ${functions.instance.Dataclass.data["TimeInfo3"].toString()}, ";
 
     // Charging Station
-    info = info + "${functions.instance.Dataclass.data["TimeInfo4"]}, $thing, $docked, $engaged, $fell, ";
+    info = info + "$thing, ${functions.instance.Dataclass.data["TimeInfo4"]}, $thing, $docked, $engaged, $fell, ";
 
     // Post Match Info
     info = info + "${functions.instance.Dataclass.data["Foul Points"].toString()}, $yellow, $red, $brokedown, $repaired";
