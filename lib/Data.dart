@@ -129,7 +129,7 @@ class dataclass {
     var moved = functions.instance.Dataclass.data["Moved"]==true ? "1" : "0";
     var docked = functions.instance.Dataclass.data["Docked"]==true ? "1" : "0";
     var engaged = functions.instance.Dataclass.data["Engaged"]==true ? "1" : "0";
-    var thing = functions.instance.Dataclass.data["Docked"];
+    var thing = functions.instance.Dataclass.data["Docked"]=true ? "1" : "0";
     if(functions.instance.Dataclass.data["Docked"] || functions.instance.Dataclass.data["Engaged"])  {
       thing="1";
     }
@@ -138,6 +138,7 @@ class dataclass {
     var brokedown = functions.instance.Dataclass.data["Brokedown Card"]==true ? "1" : "0";
     var repaired = functions.instance.Dataclass.data["Repaired Card"]==true ? "1" : "0";
     var fell = functions.instance.Dataclass.data["Fell"]==true? "1" : "0";
+    var charge = functions.instance.Dataclass.data["Charge Station"]==true? "1" : "0";
     
     var color = functions.instance.Dataclass.data["Colour"].toString()=="Colour" ? "Red" : functions.instance.Dataclass.data["Colour"].toString();
 
@@ -146,7 +147,7 @@ class dataclass {
 
     // Autonomous
     info = info + "$moved, ${functions.instance.Dataclass.data["Hybrid"]}, ${functions.instance.Dataclass.data["Middle Cube"]}, ${functions.instance.Dataclass.data["Middle Cone"]}, ${functions.instance.Dataclass.data["High Cube"]}, ${functions.instance.Dataclass.data["High Cone"]}, $thing, ";
-    info = info + "$docked, $engaged, ${functions.instance.Dataclass.data["Charge Station"]}, ";
+    info = info + "$docked, $engaged, $charge, ";
 
     // Teleop
     info = info + "${functions.instance.Dataclass.data["Hybrid Teleop"]}, ";
