@@ -24,10 +24,10 @@ class _AutoPageState extends State<AutoPage> {
               children: [
 
 
-                checkbox2(value: "Moved", description: "Has it moved"),
+                checkbox2(value: "Moved", description: "Has it moved?: "),
 
 
-                auto2(value: "Low", description: "Low Hybrid",),
+                auto2(value: "Hybrid", description: "Low Hybrid",),
                 auto2(value: "Middle Cone", description: "Middle Cones:",),
                 auto2(value: "Middle Cube", description: "Middle Cubes:",),
                 auto2(value: "High Cube", description: "High Cubes:",),

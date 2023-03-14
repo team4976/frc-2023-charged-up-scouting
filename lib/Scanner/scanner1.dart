@@ -45,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -70,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   : const Text('Scan a code'),
             ),
           ),
-          ElevatedButton(onPressed: (){if(functions.instance.Dataclass.scannerCheck(_result, 0)){functions.instance.GotoPage('/Scanner2', context);}}, child: const Text("Next Scanner"))
+          ElevatedButton(onPressed: (){functions.instance.GotoPage('/ScanNav', context);functions.instance.counter++;}, child: const Text("Scan Complete"))
         ],
       ),
     );
@@ -82,8 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     controller.scannedDataStream.listen((scanData) {
       _result = scanData.code.toString();
-      print(_result);
-      functions.instance.Dataclass.data["Scanner1"] = _result;
+      functions.instance.Dataclass.queue.add(_result);
+      print(functions.instance.Dataclass.queue);
     });
 
   }

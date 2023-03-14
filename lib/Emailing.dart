@@ -14,7 +14,7 @@ class _emailingState extends State<emailing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Convert This')),
+      appBar: AppBar(title: const Text('Convert This')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,6 +23,7 @@ class _emailingState extends State<emailing> {
                 onPressed: () {
                   functions.instance.Dataclass
                       .formCsv(functions.instance.Dataclass.MatchInfo());
+                  functions.instance.counter = 0;
                 },
                 child: const Text("Submit")),
           ],
