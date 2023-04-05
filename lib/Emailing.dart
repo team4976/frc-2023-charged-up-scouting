@@ -19,13 +19,15 @@ class _emailingState extends State<emailing> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             ElevatedButton(
                 onPressed: () {
                   functions.instance.Dataclass
-                      .formCsv(functions.instance.Dataclass.MatchInfo());
-                  functions.instance.counter = 0;
+                      .formCsv(functions.instance.Dataclass.getInformation());
+
                 },
                 child: const Text("Submit")),
+            Text(functions.instance.Dataclass.getInformation()),
           ],
         ),
       ),

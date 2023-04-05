@@ -23,6 +23,7 @@ class _scanPageState extends State<scanPage> {
           children: [
             ElevatedButton(onPressed: (){functions.instance.GotoPage("/Scanner1", context);}, child: const Text("Scan Another Code")),
             ElevatedButton(onPressed: (){functions.instance.GotoPage("/EmailingPage", context);}, child: const Text("Send the Information")),
+            ElevatedButton(onPressed: (){functions.instance.Dataclass.refreshSet();}, child: const Text("EmptyList")),
           ],
         ),
       )

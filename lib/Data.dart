@@ -45,6 +45,7 @@ class dataclass {
     "Opponent 2": "0",
     "Opponent 3": "0",
     "Charge Station": "0",
+    "Name" : "",
 
     // Timer
     "presses1": true,
@@ -159,12 +160,13 @@ class dataclass {
     info = info +
         "${collection("Foul Points").toString()}, $yellow, $red, $brokedown, $repaired";
 
+    info = info + ", ${collection("Name")}";
     return info;
   }
 
   void getFile(List<List<dynamic>> getInfos) async {
     String dir = (await getApplicationDocumentsDirectory()).path;
-    File f = new File(dir + "/filename.csv");
+    File f = new File(dir + "/filename1.csv");
 
     String csv = const ListToCsvConverter().convert(getInfos);
     f.writeAsString(csv);
@@ -179,7 +181,7 @@ class dataclass {
       totall.add(row);
     }
     String dir =
-        (await getApplicationDocumentsDirectory()).path + "/filename.csv";
+        (await getApplicationDocumentsDirectory()).path + "/filename1.csv";
 
     getFile(totall);
     Share.shareFiles(['$dir'], text: 'Robotics Csv File');
@@ -192,8 +194,26 @@ class dataclass {
       total = total + i.toString();
     }
 
-    queue = Set();
-
     return total;
+  }
+
+  void refreshSet() {
+    queue = new Set();
+  }
+
+  String SplitforView( String input) {
+    // Basically splits for the viewers
+    String total = "";
+
+    for (int i = 0; i < input.length; i++) {
+      total = input[i]=="~" ? input[i] + "\n": input[i] + i.toString();
+    }
+
+
+    return input;
+  }
+
+  String getInformation() {
+    return SplitforView(MatchInfo());
   }
 }

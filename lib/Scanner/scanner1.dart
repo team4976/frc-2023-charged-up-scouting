@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   : const Text('Scan a code'),
             ),
           ),
-          ElevatedButton(onPressed: (){functions.instance.GotoPage('/ScanNav', context);functions.instance.counter++;}, child: const Text("Scan Complete"))
+          ElevatedButton(onPressed: (){functions.instance.GotoPage('/ScanNav', context);}, child: const Text("Scan Complete"))
         ],
       ),
     );
