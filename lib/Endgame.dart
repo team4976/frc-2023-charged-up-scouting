@@ -107,7 +107,8 @@ class _endgameState extends State<endgame> {
                             }
                           });
                         },
-                      )
+                      ),
+                      functions.instance.Textfield("Notes"),
                     ],
                   ),
                 )

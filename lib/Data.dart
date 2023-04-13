@@ -21,6 +21,7 @@ class dataclass {
     "Color Blue": false,
     "Team Number": "0",
     "Match Number": "0",
+    "Notes" : "0",
     "Colour": "Colour",
     "Moved": false,
     "Middle Cone": 0,
@@ -154,13 +155,13 @@ class dataclass {
 
     // Charging Station
     info = info +
-        "$thing, ${collection("TimeInfo4")}, $thing, $docked, $engaged, $fell, ";
+        "$thing, ${collection("TimeInfo4")}, $docked, $engaged, $fell, "; // removed thing before docked
 
     // Post Match Info
     info = info +
         "${collection("Foul Points").toString()}, $yellow, $red, $brokedown, $repaired";
 
-    info = info + ", ${collection("Name")}";
+    info = info + ", ${collection("Name")}, ${collection("Notes")}";
     return info;
   }
 
