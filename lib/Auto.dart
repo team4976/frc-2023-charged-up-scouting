@@ -18,8 +18,8 @@ class _AutoPageState extends State<AutoPage> {
         title: Text(widget.title),
       ),
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: ListView(
+
+        child: Column(
           children: [
 
 
