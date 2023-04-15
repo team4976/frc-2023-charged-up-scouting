@@ -17,11 +17,9 @@ class _AutoPageState extends State<AutoPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-          child: ListView(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        child: ListView(
           children: [
 
 
@@ -48,7 +46,7 @@ class _AutoPageState extends State<AutoPage> {
                     "Next Page"
                 )),
               ])
-       ))
+       )
     );
   }
 }
