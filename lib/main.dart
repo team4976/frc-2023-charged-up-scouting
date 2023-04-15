@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Worlds Version 1',
 
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.blue,
 
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),

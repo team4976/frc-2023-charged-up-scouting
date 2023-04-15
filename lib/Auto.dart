@@ -19,9 +19,10 @@ class _AutoPageState extends State<AutoPage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+          child: ListView(
+          children: [
 
 
                 checkbox2(value: "Moved", description: "Has it moved?: "),
