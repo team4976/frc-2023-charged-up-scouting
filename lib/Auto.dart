@@ -17,9 +17,9 @@ class _AutoPageState extends State<AutoPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: PageView(
-        children: [
-          Column(
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
@@ -47,7 +47,7 @@ class _AutoPageState extends State<AutoPage> {
                     "Next Page"
                 )),
               ])
-       ])
+       ))
     );
   }
 }
