@@ -34,7 +34,7 @@ class _pregameinfoState extends State<pregameinfo> {
                 functions.instance.Textfield("Opponent 1"),
                 functions.instance.Textfield("Opponent 2"),
                 functions.instance.Textfield("Opponent 3"),
-                functions.instance.Textfield("Name"),
+
 
                 Text(functions.instance.Dataclass.data["Colour"].toString()),
 
