@@ -21,26 +21,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Worlds Version 1',
-
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      routes: {
-        '/Pregame': (context) => const Pregame.pregameinfo(title: 'Pregame'),
-        '/Index': (context) => const MyHomePage(title: 'Robotics Title Page'),
-        '/Auto': (context) => const AutoFile.AutoPage(title: 'Autonomous Period'),
-        '/Teleop': (context) => const Teleop.teleop(title: 'Teleop'),
-        '/Endgame': (context) => const Endgame.endgame(title: 'Final Info'),
-        '/Coder' : (context) => const coder.qrcode(title: 'Show this'),
-        '/Scanner1' : (context) => const scanners1.MyHomePage(title: "Scanner"),
-        '/ScanNav': (context) => const Second.scanPage(title: "Scanning Page"),
-        '/EmailingPage' : (context) => const emailing.emailing(title: "Emailing Page"),
-
-      });
-
+        title: 'Worlds Version 1',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        routes: {
+          '/Pregame': (context) => const Pregame.pregameinfo(title: 'Pregame'),
+          '/Index': (context) => const MyHomePage(title: 'Robotics Title Page'),
+          '/Auto': (context) =>
+              const AutoFile.AutoPage(title: 'Autonomous Period'),
+          '/Teleop': (context) => const Teleop.teleop(title: 'Teleop'),
+          '/Endgame': (context) => const Endgame.endgame(title: 'Final Info'),
+          '/Scanner1': (context) =>
+              const scanners1.MyHomePage(title: "Scanner"),
+          '/ScanNav': (context) =>
+              const Second.scanPage(title: "Scanning Page"),
+          '/EmailingPage': (context) =>
+              const emailing.emailing(title: "Emailing Page"),
+        });
   }
 }
 
@@ -54,34 +53,38 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      drawer: Column(),
-      appBar: AppBar(
-        leading:IconButton(icon: const Icon(Icons.star), onPressed: (){},),
-        title: const Text("Version 1"),
-      ),
+        drawer: Column(),
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.star),
+            onPressed: () {},
+          ),
+          title: const Text("Version 1"),
+        ),
         body: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(onPressed: () {Functions.functions.instance.GotoPage('/Pregame', context);},
-                    child:const Text("Start Scouting")),
-                const SizedBox(
-                  height: 15,
-                ),
-                ElevatedButton(onPressed: () {Functions.functions.instance.GotoPage('/ScanNav', context);},
-                    child:const Text("Scan Qr Code")),
-
-              ],
-            )));
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Functions.functions.instance.GotoPage('/Pregame', context);
+                },
+                child: const Text("Start Scouting")),
+            const SizedBox(
+              height: 15,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Functions.functions.instance.GotoPage('/ScanNav', context);
+                },
+                child: const Text("Scan Qr Code")),
+          ],
+        )));
 
     // This can add benifits
     // This trailing comma makes auto-formatting nicer for build methods.
-
   }
 }
